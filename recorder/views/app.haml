@@ -1,0 +1,18 @@
+%html
+  %head
+    %title
+      le cube
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
+    %meta{:name => "apple-mobile-web-app-capable", :content => "yes"}
+    %script{:src => "/main.js", :type => "text/javascript"}
+    %link{:rel => "stylesheet", :href => "/styling.css"}
+    %link{:rel => "apple-touch-icon", :href => "/camera.png"}
+  %body
+    %table.body_table
+      %tr.body_table_webcam
+        %td
+          %img{:src => "/cam/default.jpg", :id => 'image'}
+      %tr.body_table_buttonbg
+        %td
+          %a.body_table_button{:href => "#", :onclick => "triggerRecording()", :id => "contextual"}
+            Start recording

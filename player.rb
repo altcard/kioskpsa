@@ -13,7 +13,7 @@ end
 File.write(settings['socket'], "UwU")
 
 def playAndRemove(path)
-	system('play', '-d', '-q', path)
+	system('mpv', '--quiet', path)
 	FileUtils.rm_f(path)
 end
 

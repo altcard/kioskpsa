@@ -13,11 +13,22 @@ at_exit do
 end
 
 get '/' do
-	redirect '/record'
+	redirect '/app'
+end
+
+get '/cam/:item' do
+	puts params['item']
+
+	content_type 'image/jpeg'
+	File.read('/tmp/cam.jpeg')
 end
 
 get '/record' do
 	haml :recorder
+end
+
+get '/app' do
+	haml :app
 end
 
 post '/record' do

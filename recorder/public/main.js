@@ -7,7 +7,11 @@ function stopRecording() {
 	mediaRecorder.stop();
 	mediaRecorder = null;
 
-	document.getElementById('contextual').innerHTML = 'Start';
+	document.getElementById('contextual').innerHTML = 'Start recording';
+}
+
+function updateImage() {
+        document.getElementById('image').src = '/cam/' + (new Date()).getTime() + '.jpeg';
 }
 
 function pushIntoLive(recordingData) {
@@ -25,7 +29,7 @@ function pushIntoLive(recordingData) {
 
 function startRecording() {
 	recordingInProgress = true;
-	document.getElementById('contextual').innerHTML = 'Stop';
+	document.getElementById('contextual').innerHTML = 'Stop recording';
 
 	if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 		navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream) {
@@ -47,3 +51,5 @@ function triggerRecording() {
 	else
 		startRecording();
 }
+
+window.setInterval(updateImage, 1200);
