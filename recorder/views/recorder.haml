@@ -1,0 +1,10 @@
+%html
+  %head
+    %title recorder app
+    %script{:src => "/main.js", :type => "text/javascript"}
+  %body
+    %h2 Recording
+    %p
+      Click the button to record
+      %button{:onclick => "triggerRecording()", :id => "contextual"}
+        Start
